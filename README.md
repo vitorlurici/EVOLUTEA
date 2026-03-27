@@ -60,6 +60,7 @@ Painel de acompanhamento infantil
 Conteúdos educativos sobre TEA
 Sistema de progresso e evolução
 Integração entre frontend e backend
+
 🎯 Objetivo
 
 Tornar o suporte ao desenvolvimento de crianças com TEA mais acessível, utilizando tecnologia para gerar impacto real na vida das famílias.
