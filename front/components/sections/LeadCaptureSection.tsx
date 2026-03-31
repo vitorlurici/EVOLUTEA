@@ -40,9 +40,9 @@ export function LeadCaptureSection() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div>
                   <label htmlFor="email" className="sr-only">E-mail</label>
-                  <input 
-                    type="email" 
-                    id="email" 
+                  <input
+                    type="email"
+                    id="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -57,11 +57,11 @@ export function LeadCaptureSection() {
             )}
             <p className="text-xs text-gray-400 mt-4 text-center">Nós também odiamos spam. Seus dados estão seguros.</p>
           </div>
-          
+
           <div className="hidden md:block bg-gray-100 relative">
-            <img 
-              src="https://images.unsplash.com/photo-1549635031-64157fa552b7?auto=format&fit=crop&w=800&q=80" 
-              alt="Mãe lendo com a filha" 
+            <img
+              src="/guia.jpg"
+              alt="Mãe lendo com a filha"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />

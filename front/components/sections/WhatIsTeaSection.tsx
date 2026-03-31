@@ -19,9 +19,9 @@ export function WhatIsTeaSection() {
           {/* Card 1 */}
           <Card className="border-0 shadow-lg rounded-[2rem] overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
             <div className="relative h-[240px] w-full">
-              <img 
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" 
-                alt="Criança aprendendo comunicação" 
+              <img
+                src="/cards/communication.jpg"
+                alt="Criança aprendendo comunicação"
                 className="object-cover w-full h-full"
               />
             </div>
@@ -36,9 +36,9 @@ export function WhatIsTeaSection() {
           {/* Card 2 */}
           <Card className="border-0 shadow-lg rounded-[2rem] overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
             <div className="relative h-[240px] w-full">
-              <img 
-                src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80" 
-                alt="Criança brincando com blocos" 
+              <img
+                src="/cards/stats.png"
+                alt="Criança brincando com blocos"
                 className="object-cover w-full h-full"
               />
             </div>
@@ -53,9 +53,9 @@ export function WhatIsTeaSection() {
           {/* Card 3 */}
           <Card className="border-0 shadow-lg rounded-[2rem] overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
             <div className="relative h-[240px] w-full">
-              <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" 
-                alt="Mãe e filho interagem" 
+              <img
+                src="/cards/help-child.png"
+                alt="Mãe e filho interagem"
                 className="object-cover w-full h-full"
               />
             </div>

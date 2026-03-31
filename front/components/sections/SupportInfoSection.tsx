@@ -15,9 +15,9 @@ export function SupportInfoSection() {
           <div className="flex flex-col items-center text-center">
             <Card className="w-full border-0 shadow-sm rounded-3xl overflow-hidden mb-6 group hover:-translate-y-1 transition-transform duration-300">
               <div className="relative h-[200px] w-full">
-                <img 
-                  src="https://images.unsplash.com/photo-1611078816964-b816ba843ce1?auto=format&fit=crop&w=800&q=80" 
-                  alt="Puzzle heart" 
+                <img
+                  src="/cards/autism.png"
+                  alt="Puzzle heart"
                   className="object-cover w-full h-full"
                 />
               </div>
@@ -35,9 +35,9 @@ export function SupportInfoSection() {
           <div className="flex flex-col items-center text-center">
             <Card className="w-full border-0 shadow-sm rounded-3xl overflow-hidden mb-6 group hover:-translate-y-1 transition-transform duration-300">
               <div className="relative h-[200px] w-full">
-                <img 
-                  src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=800&q=80" 
-                  alt="Trabalho com crianças" 
+                <img
+                  src="/cards/our-job.png"
+                  alt="Trabalho com crianças"
                   className="object-cover w-full h-full"
                 />
               </div>
@@ -55,9 +55,9 @@ export function SupportInfoSection() {
           <div className="flex flex-col items-center text-center">
             <Card className="w-full border-0 shadow-sm rounded-3xl overflow-hidden mb-6 group hover:-translate-y-1 transition-transform duration-300">
               <div className="relative h-[200px] w-full">
-                <img 
-                  src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&q=80" 
-                  alt="Família" 
+                <img
+                  src="/cards/faq.jpg"
+                  alt="Família"
                   className="object-cover w-full h-full"
                 />
               </div>
