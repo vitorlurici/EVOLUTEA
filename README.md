@@ -27,10 +27,10 @@ Java (JDK 17+)
 PostgreSQL configurado
 🔹 Frontend (Next.js)
 # Clone o repositório
-git clone https://github.com/seu-usuario/evolutea.git
+git clone https://github.com/vitorlurici/evolutea.git
 
 # Acesse a pasta do frontend
-cd evolutea/frontend
+cd evolutea/front
 
 # Instale as dependências
 npm install
@@ -40,7 +40,7 @@ npm run dev
 
 🔹 Backend (Spring Boot)
 # Acesse a pasta do backend
-cd evolutea/backend
+cd evolutea/back
 
 # Rode a aplicação
 ./mvnw spring-boot:run
