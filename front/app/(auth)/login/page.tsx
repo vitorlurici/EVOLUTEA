@@ -1,12 +1,34 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { User, EyeOff } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { User, EyeOff, Eye } from "lucide-react";
 import { AuthSlidingPanel } from "@/components/auth/AuthSlidingPanel";
 
-export default function LoginPage() {
-  const LoginForm = ({ type }: { type: "responsavel" | "terapeuta" }) => (
+const LoginForm = ({ type }: { type: "responsavel" | "terapeuta" }) => {
+  const router = useRouter();
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleLogin = () => {
+    setError("");
+    if (type === "terapeuta") {
+      if (login === "admin" && password === "admin") {
+        router.push("/dashboard");
+      } else {
+        setError("Credenciais inválidas. Para testar, use admin / admin.");
+      }
+    } else {
+      // Mock for responsavel
+      setError("Login de responsável ainda não implementado no protótipo.");
+    }
+  };
+
+  return (
     <div className="w-full max-w-sm flex flex-col items-center">
       {/* Logo */}
       <div className="mb-6 flex justify-center">
@@ -20,12 +42,20 @@ export default function LoginPage() {
         <p className="text-xs font-semibold text-primary mb-4 uppercase tracking-wider">Acesso Terapeuta</p>
       )}
 
-      <form className="w-full flex flex-col gap-4">
-        {/* Email Input */}
+      <form 
+        className="w-full flex flex-col gap-4"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleLogin();
+        }}
+      >
+        {/* Email/Login Input */}
         <div className="relative">
           <input
-            type="email"
-            placeholder="E-mail"
+            type="text"
+            placeholder={type === "terapeuta" ? "Login (admin)" : "E-mail"}
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
             className="w-full px-6 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
           />
           <User className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -34,12 +64,20 @@ export default function LoginPage() {
         {/* Password Input */}
         <div className="relative">
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="w-full px-6 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
           />
-          <EyeOff className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 cursor-pointer" />
+          <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+            {showPassword ? <Eye className="w-5 h-5" /> : <EyeOff className="w-5 h-5" />}
+          </button>
         </div>
+
+        {error && (
+          <p className="text-red-500 text-xs text-center">{error}</p>
+        )}
 
         <div className="flex items-center justify-between mt-2 mb-6 text-xs text-gray-500">
           <label className="flex items-center gap-2 cursor-pointer">
@@ -50,7 +88,7 @@ export default function LoginPage() {
         </div>
 
         <button
-          type="button"
+          type="submit"
           className="w-full py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-dark transition-colors cursor-pointer"
         >
           Entrar
@@ -66,7 +104,6 @@ export default function LoginPage() {
           type="button"
           className="w-12 h-12 mx-auto rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm cursor-pointer"
         >
-          {/* External Google SVG or Text */}
           <span className="font-bold text-lg text-gray-600">G</span>
         </button>
 
@@ -76,7 +113,9 @@ export default function LoginPage() {
       </form>
     </div>
   );
+};
 
+export default function LoginPage() {
   return (
     <AuthSlidingPanel
       leftForm={<LoginForm type="terapeuta" />}
